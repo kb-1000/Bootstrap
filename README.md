@@ -1,2 +1,2 @@
-# Bundler
-The shell script that bundles a Firework ISO
+# Bootstrap
+The shell script that bundles a Firework image
