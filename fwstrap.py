@@ -56,7 +56,12 @@ for source in config.SOURCES:
     if cmd:
         print(
             f"\n{colored('==>', 'blue')} Calling build command for source '{name}':\n")
-        subprocess.call(cmd.split())
+        exit_code = subprocess.call(cmd.split())
+
+        if exit_code != 0:
+            print(
+                f"\n{colored('E:', 'red')} The build command for source '{name}' failed.\n")
+            exit(exit_code)
     else:
         print(f"\n{colored('W:', 'yellow')} No command for source '{name}'.\n")
 
@@ -70,8 +75,13 @@ for source in config.SOURCES:
             dest = file["dest"]
 
             print(f"{src} {colored('==>', 'blue')} {dest}")
-            subprocess.call(["echfs-utils", "-m", "-p0",
-                             f"../{output}", "import", src, dest])
+            exit_code = subprocess.call(["echfs-utils", "-m", "-p0",
+                                         f"../{output}", "import", src, dest])
+
+            if exit_code != 0:
+                print(
+                    f"\n{colored('E:', 'red')} Copying files from build source '{name}' failed.\n")
+                exit(exit_code)
 
     os.chdir("..")
 
