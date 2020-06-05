@@ -24,7 +24,7 @@ print(f"{colored('==>', 'blue')} Formatting in format echfs.")
 subprocess.call(["echfs-utils", "-m", "-p0", output, "quick-format", "32768"])
 print(f"{colored('==>', 'blue')} Adding qloader2 config file.")
 subprocess.call(["echfs-utils", "-m", "-p0", output,
-                 "import", "./qloader2.cfg", "qloader2.cfg"])
+                 "import", "./qloader2.cfg", "/boot/qloader2.cfg"])
 
 for source in config.SOURCES:
     git = source["git"]
