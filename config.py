@@ -6,7 +6,7 @@ SOURCES = [
         "git": "https://github.com/Firework-OS/Kernel.git",
         "cmd": f"make TARGET={BUILD_TYPE} OUTPUTDIR=../../build/Kernel -C ../sources/Kernel",
         "files": [
-            {"src": "./Kernel/Kernel.bin", "dest": "/Firework/System/Kernel.bin"}
+            {"src": "./Kernel/Kernel.elf", "dest": "/Firework/System/Kernel.elf"}
         ]
     },
     {
