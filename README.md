@@ -19,7 +19,7 @@ To build the projects you'll need to install the following:
 * [Make](https://www.gnu.org/software/make/)
 * [echfs](https://github.com/qword-os/echfs)
 
-In a debian based distro, you can install _**some**_ of them like this: `sudo apt install build-essential clang lld nasm make python3 python3-pip python3-venv curl fuse libfuse-dev`
+In a debian based distro, you can install _**some**_ of them like this: `sudo apt install build-essential clang lld nasm make python3 python3-pip python3-venv curl fuse libfuse-dev pkg-config`
 
 
 ### Configuration
